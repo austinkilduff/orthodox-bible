@@ -1,6 +1,9 @@
 # orthodox-bible
-### Script to compile an Orthodox Bible in JSON format
+### Scripts to compile an Orthodox Bible in JSON and LaTeX
 
-I'll probably try to get the output into markdown, LaTeX, or something else prettier later.
+Run `python txt2json.py` to generate a JSON file from the source text.
+Run `python json2tex.py` to generate a LaTeX file from the output of `txt2json.py`.
+Run `pdflatex bible.tex` to generated a PDF from the output of `json2tex.py`.
+Simple as.
 
-Just run `python txt2json.py` if you wanna make any changes to the output.
+If you want to use different source translations, you'll probably need to fix `book_order` in `txt2json.py`. I got my translations from [ebible.org](https://ebible.org/)

@@ -1,11 +1,7 @@
 import os
 import json
 from collections import OrderedDict
-
-def clean_str(s):
-    if s[0] not in 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789':
-        s = s[1:]
-    return s.strip()
+from utils import clean_str
 
 ot_dir = 'Brenton_OldTestament'
 nt_dir = 'DRA_NewTestament'
@@ -43,6 +39,7 @@ book_order = ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshu
 
 sorted_bible = OrderedDict()
 for book_title in book_order:
+    book_title = clean_str(book_title)
     sorted_bible[book_title] = bible.pop(book_title)
 
     chapter_numbers = sorted(list(sorted_bible[book_title].keys()))
